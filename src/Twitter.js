@@ -4,8 +4,6 @@ import twitterPng from './twitter.png';
 class Twitter extends Component {
   constructor(props) {
     super(props);
-    this.props = props;
-
     this.twitterShare = this.twitterShare.bind(this);
   }
 

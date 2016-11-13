@@ -3,11 +3,6 @@ import spinner from './spinner.svg';
 
 class Loading extends Component {
 
-  constructor(props) {
-    super(props);
-    this.props = props;
-  }
-
   render() {
     let loading = this.props.loading;
 

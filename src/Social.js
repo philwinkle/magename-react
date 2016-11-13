@@ -3,11 +3,6 @@ import Twitter from './Twitter';
 
 class Social extends Component {
 
-  constructor(props) {
-    super(props);
-    this.props = props;
-  }
-
   render() {
     return (
       <div className="row">
