@@ -14,6 +14,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sass": "",
+    "invalidate-cache": "aws cloudfront create-invalidation --distribution-id E3730KOT52XZBE --paths /index.html /",
+    "sync": "aws s3 sync ./build s3://magename.me/ --acl public-read",
+    "publish": "npm run build && npm run sync && npm run invalidate-cache"
   }
 }
