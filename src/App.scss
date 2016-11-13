@@ -77,16 +77,17 @@ h2 {
     line-height: 23px;
     vertical-align: top;
     cursor: pointer;
+
+    &:disabled {
+        opacity: .5;
+    }
+
+    &:hover {
+        outline: none;
+        border-color: #0089cb;
+    }
 }
 
-.another:disabled {
-    opacity: .5;
-}
-
-.another:focus {
-    outline: none;
-    border-color: #0089cb;
-}
 
 iframe { 
     margin-left: 10px;
@@ -96,4 +97,8 @@ iframe {
 
 .twitter-share-button {
     cursor: pointer;
+
+    &:hover {
+        opacity: .7;
+    }
 }
