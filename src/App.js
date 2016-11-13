@@ -43,6 +43,7 @@ class App extends Component {
         <Social
           phrase={this.state.phrase}
           phraseHandler={this.handleGetPhrase}
+          loading={this.state.loading}
         />
       </div>
     );

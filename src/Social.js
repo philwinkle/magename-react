@@ -14,6 +14,7 @@ class Social extends Component {
         <button
           className='another'
           onClick={this.props.phraseHandler}
+          disabled={this.props.loading}
         >
           <span>Another, please</span>
         </button>
