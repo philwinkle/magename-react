@@ -15,7 +15,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "push-lambda": "zip -j ./lambda/function.zip ./lambda/index.js && aws lambda update-function-code --function-name planningCenterAlexa --zip-file fileb://lambda/function.zip",
+    "push-lambda": "zip -j ./lambda/function.zip ./lambda/index.js && aws lambda update-function-code --function-name getRandomMagename --zip-file fileb://lambda/function.zip",
     "invalidate-cache": "aws cloudfront create-invalidation --distribution-id E3730KOT52XZBE --paths /index.html /",
     "sync": "aws s3 sync ./build s3://magename.me/ --acl public-read --exclude \"lambda/*\"",
     "publish": "npm run push-lambda && npm run build && npm run sync && npm run invalidate-cache"
