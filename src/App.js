@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Loading from './Loading';
 import Phrase from './Phrase';
 import Social from './Social';
-import axios from 'axios';
+import Noun from './Noun';
+import Verb from './Verb';
 import './App.css';
 
 class App extends Component {
@@ -16,17 +17,36 @@ class App extends Component {
     this.handleGetPhrase = this.handleGetPhrase.bind(this);
   }
 
+  getNoun() {
+    return Noun[Math.floor(Math.random()*Noun.length)] + 'Gento';
+  }
+
+  getVerb() {
+    return 'Mage' + Verb[Math.floor(Math.random()*Verb.length)];
+  }
+
+  getPhrase() {
+    if([0,1][Math.floor(Math.random()*2)] === 0){
+      return this.getNoun();
+    }
+
+    return this.getVerb();
+  }
+
   handleGetPhrase() {
-    this.setState({
+
+    const state = {
       loading: true
-    });
-    axios.get('https://rtb5re5jh8.execute-api.us-east-1.amazonaws.com/prod/name/random/')
-    .then(res => {
-      this.setState({
-        phrase: res.data.phrase,
-        loading: false
-      })
-    })
+    };
+
+    this.setState(state);
+
+    //felt too fast
+    setTimeout(() => {
+      state.phrase = this.getPhrase();
+      state.loading = false;
+      this.setState(state);
+    }, 500);
   }
 
   componentDidMount() {
