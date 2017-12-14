@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, matchPath} from 'react-router-dom';
 import Loading from './Loading';
-import Phrase from './Phrase';
 import Social from './Social';
 import Noun from './Noun';
 import Verb from './Verb';
@@ -44,7 +43,8 @@ class App extends Component {
 
     //felt too fast
     setTimeout(() => {
-      state.phrase = this.getPhrase();
+      state.phrase = this.state.nextPhrase || matchPath.path || this.getPhrase();
+      state.nextPhrase = this.getPhrase();
       state.loading = false;
       this.setState(state);
     }, 500);
@@ -60,13 +60,16 @@ class App extends Component {
         <div className="App">
           <h1>MageName</h1>
           <h3>Your Magento-based business should be named:</h3>
-          <Route exact={true} path="/" component={() => (
-            <h2>{this.state.phrase}</h2>
+          <Route exact={true} path="/" component={()=>(
+              <h2>{this.state.phrase}</h2>
           )} />
-          <Route path="/phrase/:phrase" component={Phrase} />
+          <Route path="/phrase/:phrase" component={()=>(
+              <h2>{this.state.phrase}</h2>
+          )} />
           <Loading loading={this.state.loading} />
           <Social
-            nextPhrase={this.getPhrase()}
+            phrase={this.state.phrase}
+            nextPhrase={this.state.nextPhrase}
             phraseHandler={this.handleGetPhrase}
             loading={this.state.loading}
           />
