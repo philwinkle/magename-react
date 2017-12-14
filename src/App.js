@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Loading from './Loading';
 import Phrase from './Phrase';
 import Social from './Social';
@@ -55,17 +56,22 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <h1>MageName</h1>
-        <h3>Your Magento-based business should be named:</h3>
-        <Phrase phrase={this.state.phrase} />
-        <Loading loading={this.state.loading} />
-        <Social
-          phrase={this.state.phrase}
-          phraseHandler={this.handleGetPhrase}
-          loading={this.state.loading}
-        />
-      </div>
+      <Router>
+        <div className="App">
+          <h1>MageName</h1>
+          <h3>Your Magento-based business should be named:</h3>
+          <Route exact={true} path="/" component={() => (
+            <h2>{this.state.phrase}</h2>
+          )} />
+          <Route path="/phrase/:phrase" component={Phrase} />
+          <Loading loading={this.state.loading} />
+          <Social
+            nextPhrase={this.getPhrase()}
+            phraseHandler={this.handleGetPhrase}
+            loading={this.state.loading}
+          />
+        </div>
+      </Router>
     );
   }
 }
