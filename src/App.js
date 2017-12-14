@@ -63,8 +63,8 @@ class App extends Component {
           <Route exact={true} path="/" component={()=>(
               <h2>{this.state.phrase}</h2>
           )} />
-          <Route path="/phrase/:phrase" component={()=>(
-              <h2>{this.state.phrase}</h2>
+          <Route path="/phrase/:phrase" component={({match})=>(
+              <h2>{match.params.phrase}</h2>
           )} />
           <Loading loading={this.state.loading} />
           <Social
