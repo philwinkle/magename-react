@@ -7,16 +7,16 @@
 	"StartCommand": "npm run-script start",
 	"InitializationTime": "2017-11-24-14-19-57",
 	"LastConfigurationTime": "2017-12-11-21-03-33",
-	"LastNPMInstallTime": "2017-12-12-00-06-54",
-	"FrontendLastBuildTime": "2017-12-11-23-45-37",
-	"LastPublishTime": "2017-12-11-23-45-49",
+	"LastNPMInstallTime": "2017-12-14-09-20-00",
+	"FrontendLastBuildTime": "2017-12-14-09-20-25",
+	"LastPublishTime": "2017-12-14-09-20-51",
 	"BackendFormat": "yml",
-	"BackendLastBuildTime": "2017-12-11-20-56-19",
-	"BackendLastUpdateTime": "2017-12-11-20-56-22",
+	"BackendLastBuildTime": "2017-12-14-10-17-55",
+	"BackendLastUpdateTime": "2017-12-14-10-19-29",
 	"BackendLastUpdateSuccessful": true,
 	"BackendProjectID": "45f99d9d-6252-4564-93e6-28dc00aa6a71",
 	"BackendProjectName": "Magename.me",
 	"BackendProjectConsoleUrl": "https://console.aws.amazon.com/mobilehub/home#/45f99d9d-6252-4564-93e6-28dc00aa6a71/build",
 	"BackendProjectCreationTime": "2017-11-24T19:04:16.993Z",
-	"BackendProjectLastUpdatedTime": "2017-12-12T01:56:20.986Z"
+	"BackendProjectLastUpdatedTime": "2017-12-14T15:18:07.855Z"
 }

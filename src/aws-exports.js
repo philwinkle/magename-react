@@ -7,6 +7,8 @@
 // AWS Mobile Hub Project Constants
 const awsmobile = {
 aws_app_analytics : 'enable',
+aws_cloud_logic : 'enable',
+aws_cloud_logic_custom : '[{"id":"ek9hnmiim8","name":"termsCRUD","description":"","endpoint":"https://ek9hnmiim8.execute-api.us-east-1.amazonaws.com/Development","region":"us-east-1","paths":["/terms","/terms/123"]}]',
 aws_cognito_identity_pool_id : 'us-east-1:9b93e80f-f6ce-4b55-8fef-3ec21684797d',
 aws_cognito_region : 'us-east-1',
 aws_content_delivery : 'enable',
@@ -14,10 +16,14 @@ aws_content_delivery_bucket : 'magenameme-hosting-mobilehub-1757591791',
 aws_content_delivery_bucket_region : 'us-east-1',
 aws_content_delivery_cloudfront : 'enable',
 aws_content_delivery_cloudfront_domain : 'd2edis3of4vw98.cloudfront.net',
+aws_dynamodb : 'enable',
+aws_dynamodb_all_tables_region : 'us-east-1',
+aws_dynamodb_table_schemas : '[{"tableName":"magenameme-mobilehub-1757591791-terms","attributes":[{"name":"term","type":"S"},{"name":"type","type":"S"}],"indexes":[{"indexName":"term","hashKey":"term"}],"region":"us-east-1","hashKey":"term"},{"tableName":"magenameme-mobilehub-1757591791-AWSMobileTable","attributes":[{"name":"teamId","type":"S"},{"name":"personId","type":"S"},{"name":"email","type":"S"},{"name":"personName","type":"S"},{"name":"phone","type":"S"}],"indexes":[{"indexName":"personName-index","hashKey":"teamId","rangeKey":"personName"}],"region":"us-east-1","hashKey":"teamId","rangeKey":"personId"}]',
 aws_mobile_analytics_app_id : '105e90d59e0c46a48cea4fc0f32754c2',
 aws_project_id : '45f99d9d-6252-4564-93e6-28dc00aa6a71',
 aws_project_name : 'Magename.me',
 aws_project_region : 'us-east-1',
+aws_resource_bucket_name : 'magenameme-deployments-mobilehub-1757591791',
 aws_resource_name_prefix : 'magenameme-mobilehub-1757591791',
 }
 
