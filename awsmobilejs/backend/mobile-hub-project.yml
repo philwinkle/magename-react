@@ -1,4 +1,6 @@
 --- !com.amazonaws.mobilehub.v0.Project 
+apps:
+  web: !com.amazonaws.mobilehub.v0.AppDO {}
 features:
   content-delivery: !com.amazonaws.mobilehub.v0.ContentDelivery 
     attributes:
@@ -6,69 +8,9 @@ features:
       visibility: public-global
     components:
       release: !com.amazonaws.mobilehub.v0.Bucket {}
-  database: !com.amazonaws.mobilehub.v0.Database 
-    components:
-      database-nosql: !com.amazonaws.mobilehub.v0.NoSQLDatabase 
-        tables:
-          - !com.amazonaws.mobilehub.v0.NoSQLTable 
-            attributes:
-              email: S
-              personName: S
-              phone: S
-            hashKeyName: teamId
-            hashKeyType: S
-            rangeKeyName: personId
-            rangeKeyType: S
-            tableName: ___DYNAMIC_PREFIX___-AWSMobileTable
-            tablePrivacy: public
-            indexes:
-              - !com.amazonaws.mobilehub.v0.NoSQLIndex 
-                hashKeyName: teamId
-                hashKeyType: S
-                rangeKeyName: personName
-                rangeKeyType: S
-                indexName: personName-index
-          - !com.amazonaws.mobilehub.v0.NoSQLTable 
-            attributes:
-              type: S
-            hashKeyName: term
-            hashKeyType: S
-            rangeKeyName: ''
-            rangeKeyType: ''
-            tableName: ___DYNAMIC_PREFIX___-terms
-            tablePrivacy: public
-            indexes:
-              - !com.amazonaws.mobilehub.v0.NoSQLIndex 
-                hashKeyName: term
-                hashKeyType: S
-                rangeKeyName: ''
-                rangeKeyType: ''
-                indexName: term
   mobile-analytics: !com.amazonaws.mobilehub.v0.Pinpoint 
     components:
       analytics: !com.amazonaws.mobilehub.v0.PinpointAnalytics {}
-  cloudlogic: !com.amazonaws.mobilehub.v0.CloudLogic 
-    components:
-      termsCRUD: !com.amazonaws.mobilehub.v0.API 
-        attributes:
-          name: termsCRUD
-          requires-signin: false
-        paths:
-          /terms: !com.amazonaws.mobilehub.v0.Function 
-            name: terms
-            codeFilename: uploads/terms-20171214101752.zip
-            handler: lambda.handler
-            enableCORS: true
-            runtime: nodejs6.10
-            environment: {}
-          '/terms/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
-            name: terms
-            codeFilename: uploads/terms-20171214101752.zip
-            handler: lambda.handler
-            enableCORS: true
-            runtime: nodejs6.10
-            environment: {}
-name: magename-react-2017-11-24-14-19-57
+  sign-in: !com.amazonaws.mobilehub.v0.SignIn {}
+name: Magename.me
 region: us-east-1
-uploads: []
-sharedComponents: {}
